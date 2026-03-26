@@ -75,28 +75,28 @@
         <nav class="aside-menu__nav">
           <ul class="aside-menu__list">
             <li class="aside-menu__item">
-              <a class="aside-menu__link">Ремонт техники</a>
+              <a class="aside-menu__link" href="#">Ремонт техники</a>
             </li>
             <li class="aside-menu__item">
-              <a class="aside-menu__link">Услуги и сервисы</a>
+              <a class="aside-menu__link" href="#">Услуги и сервисы</a>
             </li>
             <li class="aside-menu__item">
-              <a class="aside-menu__link">Корпоративным клиентам</a>
+              <a class="aside-menu__link" href="#">Корпоративным клиентам</a>
             </li>
             <li class="aside-menu__item">
-              <a class="aside-menu__link">Продавцам техники</a>
+              <a class="aside-menu__link" href="#">Продавцам техники</a>
             </li>
             <li class="aside-menu__item">
-              <a class="aside-menu__link">Партнерам</a>
+              <a class="aside-menu__link" href="#">Партнерам</a>
             </li>
             <li class="aside-menu__item">
-              <a class="aside-menu__link">Производителям</a>
+              <a class="aside-menu__link" href="#">Производителям</a>
             </li>
             <li class="aside-menu__item">
-              <a class="aside-menu__link">Наши сервисные центры</a>
+              <a class="aside-menu__link" href="#">Наши сервисные центры</a>
             </li>
             <li class="aside-menu__item">
-              <a class="aside-menu__link">Контакты</a>
+              <a class="aside-menu__link" href="#">Контакты</a>
             </li>
           </ul>
         </nav>
@@ -112,7 +112,10 @@
               type="button"
               data-modal="feedback"
             ></button>
-            <button class="round-icon round-icon--profile"></button>
+            <button
+              class="round-icon round-icon--profile"
+              type="button"
+            ></button>
           </div>
 
           <div class="aside-menu__mail">
@@ -131,6 +134,7 @@
         </footer>
       </aside>
       <div class="overlay" id="overlay"></div>
+      <div class="modal-overlay" id="modalOverlay"></div>
       <div class="main__container">
         <div class="main__title title">
           <div class="main__title-main">
@@ -227,56 +231,56 @@
           </div>
         </div>
         <section class="brand">
-          <div class="brand-title">
-            <h2 class="brand-title__text">Ремонт техники различных брендов</h2>
+          <div class="brand__title">
+            <h2 class="brand__title-text">Ремонт техники различных брендов</h2>
           </div>
 
           <div class="brand__swiper swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <div class="card">
+                <div class="card brand__card">
                   <span class="img-card--lenovo"></span>
                   <button class="button-next" type="button"></button>
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="card">
+                <div class="card brand__card">
                   <span class="img-card--samsung"></span>
                   <button class="button-next" type="button"></button>
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="card">
+                <div class="card brand__card">
                   <span class="img-card--apple"></span>
                   <button class="button-next" type="button"></button>
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="card">
+                <div class="card brand__card">
                   <span class="img-card--vievSonic"></span>
                   <button class="button-next" type="button"></button>
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="card">
+                <div class="card brand__card">
                   <span class="img-card--bosch"></span>
                   <button class="button-next" type="button"></button>
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="card">
+                <div class="card brand__card">
                   <span class="img-card--hp"></span>
                   <button class="button-next" type="button"></button>
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="card">
+                <div class="card brand__card">
                   <span class="img-card--acer"></span>
                   <button class="button-next" type="button"></button>
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="card">
+                <div class="card brand__card">
                   <span class="img-card--sony"></span>
                   <button class="button-next" type="button"></button>
                 </div>
@@ -289,48 +293,48 @@
             <div class="brand__pagination swiper-pagination"></div>
           </div>
 
-          <div class="brand-repair">
-            <div class="card">
+          <div class="brand__list">
+            <div class="card brand__card">
               <span class="img-card--lenovo"></span>
               <button class="button-next" type="button"></button>
             </div>
-            <div class="card">
+            <div class="card brand__card">
               <span class="img-card--samsung"></span>
               <button class="button-next" type="button"></button>
             </div>
-            <div class="card">
+            <div class="card brand__card">
               <span class="img-card--apple"></span>
               <button class="button-next" type="button"></button>
             </div>
-            <div class="card">
+            <div class="card brand__card">
               <span class="img-card--vievSonic"></span>
               <button class="button-next" type="button"></button>
             </div>
-            <div class="card">
+            <div class="card brand__card">
               <span class="img-card--bosch"></span>
               <button class="button-next" type="button"></button>
             </div>
-            <div class="card">
+            <div class="card brand__card">
               <span class="img-card--hp"></span>
               <button class="button-next" type="button"></button>
             </div>
-            <div class="card">
+            <div class="card brand__card">
               <span class="img-card--acer"></span>
               <button class="button-next" type="button"></button>
             </div>
-            <div class="card">
+            <div class="card brand__card">
               <span class="img-card--sony"></span>
               <button class="button-next" type="button"></button>
             </div>
-            <div class="hidden-card">
+            <div class="card brand__card brand__card--hidden">
               <span class="img-card--lenovo"></span>
               <button class="button-next" type="button"></button>
             </div>
-            <div class="hidden-card">
+            <div class="card brand__card brand__card--hidden">
               <span class="img-card--samsung"></span>
               <button class="button-next" type="button"></button>
             </div>
-            <div class="hidden-card">
+            <div class="card brand__card brand__card--hidden">
               <span class="img-card--apple"></span>
               <button class="button-next" type="button"></button>
             </div>
@@ -343,20 +347,20 @@
           </div>
           <div class="technique__block">
             <div class="technique__card">
-              <p class="card-text">Ремонт ноутбуков</p>
-              <button class="button-next"></button>
+              <p class="technique__card-text">Ремонт ноутбуков</p>
+              <button class="button-next" type="button"></button>
             </div>
             <div class="technique__card">
-              <p class="card-text">Ремонт планшетов</p>
-              <button class="button-next"></button>
+              <p class="technique__card-text">Ремонт планшетов</p>
+              <button class="button-next" type="button"></button>
             </div>
             <div class="technique__card">
-              <p class="card-text">Ремонт ПК</p>
-              <button class="button-next"></button>
+              <p class="technique__card-text">Ремонт ПК</p>
+              <button class="button-next" type="button"></button>
             </div>
             <div class="technique__card technique__card--hidden">
-              <p class="card-text">Ремонт мониторов</p>
-              <button class="button-next"></button>
+              <p class="technique__card-text">Ремонт мониторов</p>
+              <button class="button-next" type="button"></button>
             </div>
           </div>
           <button class="technique__show-hide" type="button"
@@ -366,24 +370,24 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="technique__card">
-                  <p class="card-text">Ремонт ноутбуков</p>
-                  <button class="button-next"></button>
+                  <p class="technique__card-text">Ремонт ноутбуков</p>
+                  <button class="button-next" type="button"></button>
                 </div>
               </div>
               <div class="swiper-slide"
                 ><div class="technique__card">
-                  <p class="card-text">Ремонт планшетов</p>
-                  <button class="button-next"></button> </div
+                  <p class="technique__card-text">Ремонт планшетов</p>
+                  <button class="button-next" type="button"></button> </div
               ></div>
               <div class="swiper-slide"
                 ><div class="technique__card">
-                  <p class="card-text">Ремонт ПК</p>
-                  <button class="button-next"></button> </div
+                  <p class="technique__card-text">Ремонт ПК</p>
+                  <button class="button-next" type="button"></button> </div
               ></div>
               <div class="swiper-slide"
                 ><div class="technique__card">
-                  <p class="card-text">Ремонт мониторов</p>
-                  <button class="button-next"></button> </div
+                  <p class="technique__card-text">Ремонт мониторов</p>
+                  <button class="button-next" type="button"></button> </div
               ></div>
             </div>
             <div class="swiper-buttons">

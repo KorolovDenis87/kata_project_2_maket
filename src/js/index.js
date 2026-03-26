@@ -1,140 +1,158 @@
 import '../scss/style.scss'
 
-//боковое меню
+// боковое меню
 
 const openButton = document.getElementById('openButton')
 const closeButton = document.getElementById('closeButton')
 const aside = document.getElementById('myAside')
 const overlay = document.getElementById('overlay')
 
-if (openButton && aside && overlay) {
+function openAside() {
+  if (!aside || !overlay) return
+
+  aside.classList.add('aside-menu--opened')
+  overlay.classList.add('overlay--active')
+}
+
+function closeAside() {
+  if (!aside || !overlay) return
+
+  aside.classList.remove('aside-menu--opened')
+  overlay.classList.remove('overlay--active')
+}
+
+if (openButton) {
   openButton.addEventListener('click', () => {
-    aside.style.display = 'grid'
-    overlay.style.display = 'block'
+    if (window.innerWidth < 1120) {
+      openAside()
+    }
   })
 }
 
-if (closeButton && aside && overlay) {
+if (closeButton) {
   closeButton.addEventListener('click', () => {
     if (window.innerWidth < 1120) {
-      aside.style.display = 'none'
-      overlay.style.display = 'none'
+      closeAside()
     }
   })
 }
 
-if (overlay && aside) {
+if (overlay) {
   overlay.addEventListener('click', () => {
     if (window.innerWidth < 1120) {
-      aside.style.display = 'none'
-      overlay.style.display = 'none'
+      closeAside()
     }
   })
 }
 
-//свайпер brand
-
-const brandSwiper = new Swiper('.brand__swiper', {
-  direction: 'horizontal',
-  loop: true,
-  slidesPerView: 'auto',
-  spaceBetween: 16,
-
-  pagination: {
-    el: '.brand__pagination',
-    clickable: true
-  },
-
-  navigation: {
-    nextEl: '.brand__button-next',
-    prevEl: '.brand__button-prev'
-  }
-})
-
-//свайпер technique
-
-const techniqueSwiper = new Swiper('.technique__swiper', {
-  direction: 'horizontal',
-  loop: true,
-  slidesPerView: 'auto',
-  spaceBetween: 16,
-
-  pagination: {
-    el: '.technique__pagination',
-    clickable: true
-  },
-
-  navigation: {
-    nextEl: '.technique__button-next',
-    prevEl: '.technique__button-prev'
-  }
-})
-
-//свайпер price
-
-const priceSwiper = new Swiper('.price__swiper', {
-  direction: 'horizontal',
-  loop: true,
-  slidesPerView: 'auto',
-  spaceBetween: 16,
-
-  pagination: {
-    el: '.price__pagination',
-    clickable: true
-  },
-
-  navigation: {
-    nextEl: '.price__button-next',
-    prevEl: '.price__button-prev'
-  }
-})
-
-//Показать скрыть brand
-
-const toggleButton = document.querySelector('.brand__show-hide')
-const hiddenCards = document.querySelectorAll('.hidden-card')
-
-let isExpanded = false
-
-toggleButton.addEventListener('click', () => {
-  isExpanded = !isExpanded
-  if (isExpanded) {
-    hiddenCards.forEach((card) => {
-      card.style.display = 'flex'
-    })
-    toggleButton.textContent = 'Скрыть'
-    toggleButton.classList.add('expanded')
-  } else {
-    hiddenCards.forEach((card) => {
-      card.style.display = 'none'
-    })
-    toggleButton.textContent = 'Показать все'
-    toggleButton.classList.remove('expanded')
-  }
-})
-
-//поведение aside при разрешениях
-
-const asideMenu = document.getElementById('myAside')
-
-if (asideMenu && overlay) {
+if (aside && overlay) {
   function checkWindowSize() {
     if (window.innerWidth >= 1120) {
-      asideMenu.style.display = 'grid'
-      overlay.style.display = 'none'
+      aside.classList.add('aside-menu--opened')
+      overlay.classList.remove('overlay--active')
     } else {
-      asideMenu.style.display = 'none'
-      overlay.style.display = 'none'
+      aside.classList.remove('aside-menu--opened')
+      overlay.classList.remove('overlay--active')
     }
   }
 
   checkWindowSize()
   window.addEventListener('resize', checkWindowSize)
-} else {
-  console.error("Элемент с id 'myAside' не найден на странице.")
 }
 
-//показать скрыть technique
+// свайперы
+
+function initMobileSwipers() {
+  if (window.innerWidth >= 768) return
+
+  if (document.querySelector('.brand__swiper')) {
+    new Swiper('.brand__swiper', {
+      direction: 'horizontal',
+      loop: true,
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+
+      pagination: {
+        el: '.brand__pagination',
+        clickable: true
+      },
+
+      navigation: {
+        nextEl: '.brand__button-next',
+        prevEl: '.brand__button-prev'
+      }
+    })
+  }
+
+  if (document.querySelector('.technique__swiper')) {
+    new Swiper('.technique__swiper', {
+      direction: 'horizontal',
+      loop: true,
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+
+      pagination: {
+        el: '.technique__pagination',
+        clickable: true
+      },
+
+      navigation: {
+        nextEl: '.technique__button-next',
+        prevEl: '.technique__button-prev'
+      }
+    })
+  }
+
+  if (document.querySelector('.price__swiper')) {
+    new Swiper('.price__swiper', {
+      direction: 'horizontal',
+      loop: true,
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+
+      pagination: {
+        el: '.price__pagination',
+        clickable: true
+      },
+
+      navigation: {
+        nextEl: '.price__button-next',
+        prevEl: '.price__button-prev'
+      }
+    })
+  }
+}
+
+initMobileSwipers()
+
+// Показать / скрыть brand
+
+const toggleButton = document.querySelector('.brand__show-hide')
+const hiddenCards = document.querySelectorAll('.brand__card--hidden')
+
+let isExpanded = false
+
+if (toggleButton) {
+  toggleButton.addEventListener('click', () => {
+    isExpanded = !isExpanded
+
+    if (isExpanded) {
+      hiddenCards.forEach((card) => {
+        card.style.display = 'flex'
+      })
+      toggleButton.textContent = 'Скрыть'
+      toggleButton.classList.add('expanded')
+    } else {
+      hiddenCards.forEach((card) => {
+        card.style.display = 'none'
+      })
+      toggleButton.textContent = 'Показать все'
+      toggleButton.classList.remove('expanded')
+    }
+  })
+}
+
+// показать / скрыть technique
 
 const techniqueButton = document.querySelector('.technique__show-hide')
 const hiddenTechniqueCards = document.querySelectorAll(
@@ -161,7 +179,7 @@ if (techniqueButton) {
   })
 }
 
-//модалка
+// модалка
 
 const modalOverlay = document.getElementById('modalOverlay')
 const callModal = document.getElementById('callModal')
@@ -175,7 +193,7 @@ function openModal(modal) {
   if (!modal || !modalOverlay) return
 
   modal.classList.add('modal--opened')
-  modalOverlay.style.display = 'block'
+  modalOverlay.classList.add('modal-overlay--active')
   document.body.style.overflow = 'hidden'
 }
 
@@ -189,7 +207,7 @@ function closeModals() {
   }
 
   if (modalOverlay) {
-    modalOverlay.style.display = 'none'
+    modalOverlay.classList.remove('modal-overlay--active')
   }
 
   document.body.style.overflow = ''
