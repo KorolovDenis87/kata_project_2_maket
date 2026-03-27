@@ -15,9 +15,13 @@
     <header class="header">
       <!-- меню слева -->
       <div class="header__menu-left">
-        <button id="openButton" class="round-icon round-icon--burger"></button>
-        <span class="menu-left__divider-left"> </span>
-        <a class="menu-left__logo" href="#">
+        <button
+          id="openButton"
+          class="round-icon round-icon--burger"
+          type="button"
+        ></button>
+        <span class="header__divider-left"> </span>
+        <a class="header__logo" href="#">
           <img src="./img/header/Group.svg" alt="Logo" />
         </a>
       </div>
@@ -67,7 +71,7 @@
             type="button"
           ></button>
 
-          <a class="menu-left__logo" href="#">
+          <a class="header__logo" href="#">
             <img src="./img/header/Group.svg" alt="Logo" />
           </a>
           <button class="round-icon round-icon--search" type="button"></button>
@@ -134,7 +138,6 @@
         </footer>
       </aside>
       <div class="overlay" id="overlay"></div>
-      <div class="modal-overlay" id="modalOverlay"></div>
       <div class="main__container">
         <div class="main__title title">
           <div class="main__title-main">
@@ -142,7 +145,7 @@
             <h1>Услуги и сервисы</h1>
           </div>
           <div class="button-form__status button-form__status--container-lg">
-            <label class="label-form__input">
+            <label class="button-form__label">
               Оставить заявку
 
               <button
@@ -150,7 +153,7 @@
                 type="button"
               ></button
             ></label>
-            <label class="label-form__input">
+            <label class="button-form__label">
               Статус ремонта
 
               <button

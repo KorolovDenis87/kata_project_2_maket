@@ -1,18 +1,18 @@
-/* $bgColor: #F8F8F8;
-$text: #1B1C21;
-; */
-
 :root {
   --color-white: #ffffff;
   --color-dark-gray: #7e7e82;
   --color-gray: #f8f8f8;
   --color-blue: #b8ffec;
   --color-shadow-line: #d9fff5;
-  --border-radius: 6px;
-  --border: 2px solid var(--color-blue);
-  --input-height: 40px;
-  --hover-button-color: 0.8;
   --color-pink: #ff3e79;
   --color-border-brand: #eaeaea;
   --color-text: #1b1c21;
+
+  --border-radius: 6px;
+  --border: 2px solid var(--color-blue);
+  --input-height: 40px;
+
+  --screen-md: 768px;
+  --screen-lg: 1120px;
+  --screen-xl: 1440px;
 }
