@@ -11,7 +11,7 @@ module.exports = {
   output: {
     filename: './js/bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/kata_project_2/'
+    publicPath: '/kata_project_2_maket/'
   },
 
   // Source maps для удобства отладки
