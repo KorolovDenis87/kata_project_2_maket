@@ -62,53 +62,70 @@ if (aside && overlay) {
 
 // свайперы
 
-function initMobileSwipers() {
-  if (window.innerWidth >= 768) return
+let brandSwiper = null
+let techniqueSwiper = null
+let priceSwiper = null
 
-  if (document.querySelector('.brand__swiper')) {
-    new Swiper('.brand__swiper', {
-      direction: 'horizontal',
-      loop: false,
-      slidesPerView: 'auto',
-      spaceBetween: 16,
+function initOrDestroySwipers() {
+  if (window.innerWidth < 768) {
+    if (!brandSwiper && document.querySelector('.brand__swiper')) {
+      brandSwiper = new Swiper('.brand__swiper', {
+        direction: 'horizontal',
+        loop: false,
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        pagination: {
+          el: '.brand__pagination',
+          clickable: true
+        }
+      })
+    }
 
-      pagination: {
-        el: '.brand__pagination',
-        clickable: true
-      }
-    })
-  }
+    if (!techniqueSwiper && document.querySelector('.technique__swiper')) {
+      techniqueSwiper = new Swiper('.technique__swiper', {
+        direction: 'horizontal',
+        loop: false,
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        pagination: {
+          el: '.technique__pagination',
+          clickable: true
+        }
+      })
+    }
 
-  if (document.querySelector('.technique__swiper')) {
-    new Swiper('.technique__swiper', {
-      direction: 'horizontal',
-      loop: false,
-      slidesPerView: 'auto',
-      spaceBetween: 16,
+    if (!priceSwiper && document.querySelector('.price__swiper')) {
+      priceSwiper = new Swiper('.price__swiper', {
+        direction: 'horizontal',
+        loop: false,
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        pagination: {
+          el: '.price__pagination',
+          clickable: true
+        }
+      })
+    }
+  } else {
+    if (brandSwiper) {
+      brandSwiper.destroy(true, true)
+      brandSwiper = null
+    }
 
-      pagination: {
-        el: '.technique__pagination',
-        clickable: true
-      }
-    })
-  }
+    if (techniqueSwiper) {
+      techniqueSwiper.destroy(true, true)
+      techniqueSwiper = null
+    }
 
-  if (document.querySelector('.price__swiper')) {
-    new Swiper('.price__swiper', {
-      direction: 'horizontal',
-      loop: false,
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-
-      pagination: {
-        el: '.price__pagination',
-        clickable: true
-      }
-    })
+    if (priceSwiper) {
+      priceSwiper.destroy(true, true)
+      priceSwiper = null
+    }
   }
 }
 
-initMobileSwipers()
+initOrDestroySwipers()
+window.addEventListener('resize', initOrDestroySwipers)
 
 // Показать / скрыть brand
 
