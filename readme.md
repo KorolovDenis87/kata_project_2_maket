@@ -1,1 +1,1 @@
-https://korolovdenis87.github.io/kata_project_2/
+https://korolovdenis87.github.io/kata_project_2_maket/
