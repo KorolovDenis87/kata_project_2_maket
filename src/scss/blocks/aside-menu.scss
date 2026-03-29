@@ -5,7 +5,7 @@
   width: 320px;
   min-height: 100%;
   display: none;
-  z-index: 2;
+  z-index: 10;
   background-color: var(--color-white);
   box-shadow: 16px 0 52px 0 rgba(14, 24, 80, 0.2);
   grid-template-rows: auto 1fr auto;
@@ -146,8 +146,8 @@
   position: fixed;
   inset: 0;
   display: none;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.96);
 
   @media (min-width: 1120px) {
     display: none !important;

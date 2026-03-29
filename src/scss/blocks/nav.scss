@@ -2,93 +2,85 @@
   overflow-x: auto;
   white-space: nowrap;
 }
+
 .main__nav-menu {
   display: flex;
   justify-content: flex-start;
-  overflow-x: auto;
   padding-left: 20px;
+  overflow-x: auto;
   -webkit-mask: linear-gradient(
     to right,
     rgba(0, 0, 0, 1) 0%,
     rgba(0, 0, 0, 1) 90%,
     rgba(0, 0, 0, 0) 100%
   );
+
+  @media (min-width: 1120px) {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    -webkit-mask: none;
+  }
 }
+
 .main__nav-item {
   display: inline-flex;
-  /* border: none; */
+  flex-shrink: 0;
 }
+
 .main__nav-link {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 15px;
   font-family: TT Lakes;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
   text-decoration: none;
-  height: 40px;
   color: var(--color-dark-gray);
-  padding: 0 15px;
-  border: 1rem;
+
+  &:hover {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-white);
+    cursor: pointer;
+  }
 }
-.main__nav-link:hover {
-  border: var(--border);
-  background-color: var(--color-white);
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  /* white-space: nowrap;
-  position: relative; */
-}
+
 .main__nav-link--first {
   width: 233px;
+
+  @media (max-width: 1119px) {
+    display: none;
+  }
 }
+
 .main__nav-link--second {
   width: 254px;
 }
+
 .main__nav-link--third {
   width: 211px;
+
+  @media (min-width: 1120px) {
+    display: none;
+  }
 }
+
 .main__nav-link--fourth {
   width: 143px;
 }
+
 .main__nav-link--fifth {
   width: 233px;
 }
+
 .main__nav-link--sixth {
   width: 191px;
 }
+
 .main__nav-link--seventh {
   width: 110px;
-}
-
-@media (max-width: 320px) {
-  .main__nav-link--first {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .main__nav-link--first {
-    display: none;
-  }
-}
-
-@media (min-width: 1120px) {
-  .main__nav-link--first {
-    display: flex;
-  }
-  .main__nav-link--second {
-    border: none;
-  }
-  .main__nav-link--third {
-    display: none;
-  }
-  .main__nav-link--fifth {
-    display: flex;
-  }
-  .main__nav-menu {
-    flex-wrap: wrap;
-  }
 }

@@ -1,267 +1,240 @@
-.main__container {
-  position: relative;
-  background-color: var(--color-gray);
-  padding-top: 20px;
-  margin: 0 auto;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.main__title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  //width: 304px;
-  height: 40px;
-}
-.main__highlight-main {
-  width: 4px;
-  height: 40px;
-  border-radius: 0 7px 7px 0;
-  margin-right: 15px;
-  background-image: url('../img/main/highlight.svg');
-}
-.main__content {
-  padding: 0 16px;
-}
-.main__content-text {
-  font-family: TT Lakes;
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: 0.2px;
-}
-.text-content {
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-.text-content p {
-  margin: 0 0 12px;
-}
-.main__read-more {
-  display: block;
-  font-family: TT Lakes;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  cursor: pointer;
-  border: none;
-  background-color: var(--color-gray);
-  transition-duration: 0.3s;
-}
-.main__read-more::before {
-  display: inline-flex;
-  content: '';
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-  background-position: 10px 13px;
-  background-image: url('../img/main/ic-expand.svg');
-}
-
-.main__read-more:hover {
-  scale: 110%;
-}
-
-@media (max-width: 767px) {
-  .main__content-logo {
-    width: 100%;
-  }
-
-  .main__content {
-    width: 100%;
-  }
-
-  .main__content-text {
-    width: 100%;
-    line-height: 18px;
-  }
-
-  .text-content {
-    width: 288px;
-    height: 90px;
-  }
-
-  .content-size__medium-text {
-    display: none;
-  }
-
-  .content-size__max-text {
-    display: none;
-  }
-
-  .main__slide-menu {
-    width: 100%;
-  }
-
-  .main__logo {
-    width: 320px;
-  }
-
-  .main__logo-group {
-    display: block;
-    width: 320px;
-    height: auto;
-    margin-top: 16px;
-    margin-bottom: 20px;
-  }
-
-  .main__title-main {
-    display: flex;
-    align-items: center;
-  }
-}
-
-@media (min-width: 768px) {
-  .main__content-logo {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    min-height: 208px;
-  }
-
-  .main__content {
-    padding: 0 24px;
-  }
-
-  .main__content-text {
-    width: 312px;
-    line-height: 19px;
-  }
-
-  .text-content {
-    width: 312px;
-    height: 160px;
-  }
-
-  .content-size__min-text {
-    display: none;
-  }
-
-  .content-size__medium-text {
-    display: block;
-  }
-
-  .main__slide-menu {
-    width: 100%;
-  }
-
-  .main__logo {
-    width: 360px;
-    height: 208px;
-    margin-left: 40px;
-  }
-
-  .main__logo-group {
-    display: block;
-    width: 360px;
-    height: 208px;
-    margin-top: 20px;
-    border-radius: 5px;
-  }
-
-  .main__title-main {
-    display: flex;
-    align-items: center;
-  }
-}
-
-@media (min-width: 1120px) {
-  .main {
+.main {
+  @media (min-width: 1120px) {
     max-width: 1440px;
     margin: 0 auto;
   }
 
-  .main__container {
-    max-width: 1120px;
-    margin-left: 320px;
-    background-color: var(--color-gray);
-    padding: 0 32px;
-  }
-
-  .main__title {
-    display: flex;
-    justify-content: space-between;
+  &__container {
+    position: relative;
     width: 100%;
-    align-items: center;
+    margin: 0 auto;
     padding-top: 20px;
-    margin-left: -32px;
+    background-color: var(--color-gray);
+    flex-wrap: wrap;
+
+    @media (min-width: 1120px) {
+      max-width: 1120px;
+      margin-left: 320px;
+      padding: 0 32px;
+    }
   }
 
-  .main__slide-menu {
-    margin-left: -24px;
-  }
-
-  .main__content-logo {
+  &__title {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    min-height: 315px;
-    //padding: 0 32px;
+    align-items: center;
+    height: 40px;
+
+    @media (min-width: 1120px) {
+      justify-content: space-between;
+      width: 100%;
+      padding-top: 20px;
+      margin-left: -32px;
+    }
   }
 
-  .main__content {
-    padding: 0;
+  &__heading {
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 1120px) {
+      flex-shrink: 0;
+    }
   }
 
-  .main__content-text {
-    width: 490px;
-    min-height: 195px;
-  }
-
-  .content-size__max-text {
+  &__highlight {
     display: block;
-  }
-
-  .content-size__medium-text {
-    display: none;
-  }
-
-  .content-size__min-text {
-    display: none;
-  }
-
-  .button-form__status--container-lg {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 24px;
-    padding-right: 0;
     flex-shrink: 0;
+    width: 4px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 0 7px 7px 0;
+    background-image: url('../img/main/highlight.svg');
   }
 
-  .button-form__label-repair,
-  .button-form__label-checkstatus {
-    display: flex;
-    align-items: center;
+  &__slide-menu {
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      width: 100%;
+    }
+
+    @media (min-width: 1120px) {
+      margin-left: -24px;
+    }
   }
 
-  .button-form__label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
+  &__intro {
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 208px;
+    }
+
+    @media (min-width: 1120px) {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 315px;
+    }
   }
 
-  .main__logo {
-    width: 530px;
-    height: 307px;
+  &__content {
+    padding: 0 16px;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      padding: 0 24px;
+    }
+
+    @media (min-width: 1120px) {
+      padding: 0;
+    }
   }
 
-  .main__logo-group {
+  &__content-text {
+    font-family: TT Lakes;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      line-height: 18px;
+    }
+
+    @media (min-width: 768px) {
+      width: 312px;
+      line-height: 19px;
+    }
+
+    @media (min-width: 1120px) {
+      width: 490px;
+      min-height: 195px;
+    }
+  }
+
+  &__text-content {
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    @media (max-width: 767px) {
+      width: 288px;
+      height: 90px;
+    }
+
+    @media (min-width: 768px) {
+      width: 312px;
+      height: 160px;
+    }
+
+    @media (min-width: 1120px) {
+      width: 100%;
+      min-height: 160px;
+      margin-top: 10px;
+    }
+  }
+
+  &__read-more {
     display: block;
-    width: 500px;
-    height: 307px;
+    border: none;
+    background-color: var(--color-gray);
+    cursor: pointer;
+    font-family: TT Lakes;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    transition-duration: 0.3s;
+
+    &::before {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      content: '';
+      background-image: url('../img/main/ic-expand.svg');
+      background-repeat: no-repeat;
+      background-position: 10px 13px;
+    }
+
+    &:hover {
+      scale: 110%;
+    }
   }
 
-  .main__title-main {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
+  &__logo {
+    @media (max-width: 767px) {
+      width: 320px;
+    }
+
+    @media (min-width: 768px) {
+      width: 360px;
+      height: 208px;
+      margin-left: 40px;
+    }
+
+    @media (min-width: 1120px) {
+      width: 530px;
+      height: 307px;
+    }
   }
 
-  .text-content {
-    width: 100%;
-    min-height: 160px;
-    margin-top: 10px;
+  &__image {
+    display: block;
+
+    @media (max-width: 767px) {
+      width: 320px;
+      height: auto;
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px) {
+      width: 360px;
+      height: 208px;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+
+    @media (min-width: 1120px) {
+      width: 500px;
+      height: 307px;
+    }
+  }
+}
+
+// элементы button-form, используемые в main
+
+.button-form {
+  &__status--container-lg {
+    @media (min-width: 1120px) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
+      padding-right: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  &__label {
+    @media (min-width: 1120px) {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
   }
 }

@@ -1,226 +1,227 @@
 .price {
   display: block;
   padding-bottom: 20px;
-}
 
-.price__title {
-  background: linear-gradient(450deg, #f8f8f8 0%, #ffffff 98.61%);
-  border-top: 1px solid #d9fff5;
-}
+  &__title {
+    background: linear-gradient(450deg, #f8f8f8 0%, #ffffff 98.61%);
+    border-top: 1px solid #d9fff5;
+  }
 
-.price__text {
-  font-family: TT Lakes;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  text-transform: uppercase;
-  padding: 0 20px 20px;
-}
+  &__text {
+    padding: 0 20px 20px;
+    font-family: TT Lakes;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+  }
 
-.price__table {
-  display: none;
-
-  @media (min-width: 768px) {
+  &__swiper {
     display: block;
-    margin: 16px 24px 0;
+    padding: 16px 0 0 16px;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    .swiper-slide {
+      width: 260px !important;
+      flex-shrink: 0;
+    }
+
+    .swiper-pagination {
+      position: static;
+      margin-top: 16px;
+    }
   }
 
-  @media (min-width: 1120px) {
-    margin: 24px 32px 0;
-  }
-}
-
-.price__row {
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: minmax(350px, 4fr) 1fr 1fr 119px;
-    align-items: center;
-    column-gap: 24px;
-    padding: 16px 16px 16px 24px;
+  &__card {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    padding: 16px;
+    border: 1px solid var(--color-border-brand);
+    border-radius: 6px;
     background-color: var(--color-white);
-    border-bottom: 1px solid #eaeaea;
+    box-sizing: border-box;
+
+    .price__button {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+    }
+  }
+
+  &__card-title {
+    font-family: TT Lakes;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0;
+  }
+
+  &__card-value {
+    margin: 5px 0 10px;
     font-family: TT Lakes;
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-    color: #1b1c21;
+    letter-spacing: 0.2px;
   }
 
-  @media (min-width: 1120px) {
-    grid-template-columns:
-      minmax(420px, 2fr) minmax(100px, 140px) minmax(100px, 140px)
-      119px;
-    padding: 16px 24px;
-  }
-}
-
-.price__row--header {
-  @media (min-width: 768px) {
-    background-color: transparent;
-    border-bottom: none;
-    color: #7e7e82;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    padding: 0 16px 8px 24px;
-  }
-
-  @media (min-width: 1120px) {
-    padding: 0 24px 8px;
-  }
-}
-
-.price__row:last-child {
-  @media (min-width: 768px) {
-    border-bottom: none;
-  }
-}
-
-.price__row .price-button {
-  @media (min-width: 768px) {
-    justify-self: end;
-    align-self: end;
-  }
-}
-
-.price__swiper .swiper-slide {
-  width: 260px !important;
-  flex-shrink: 0;
-}
-
-.price__swiper .swiper-pagination {
-  position: static;
-  margin-top: 16px;
-}
-
-.price-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 119px;
-  height: 32px;
-  padding: 0 12px 0 14px;
-  border: none;
-  border-radius: 16px;
-  background-color: var(--color-pink);
-  cursor: pointer;
-  font-family: TT Lakes;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 24px;
-  letter-spacing: -0.15px;
-  text-transform: uppercase;
-  color: var(--color-white);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-
-.price-button__text {
-  display: block;
-}
-
-.price-button__arrow {
-  display: block;
-  width: 24px;
-  height: 24px;
-  background-image: url('../img/main/order.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  flex-shrink: 0;
-}
-
-.price__swiper {
-  display: block;
-  padding: 16px 0 0 16px;
-
-  @media (min-width: 768px) {
+  &__table {
     display: none;
-  }
-}
 
-.price-card {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  padding: 16px;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border-brand);
-  border-radius: 6px;
-  //box-sizing: border-box;
-}
+    @media (min-width: 768px) {
+      display: block;
+      margin: 16px 24px 0;
+    }
 
-.price-card .price-button {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-}
-
-.price-card__title {
-  font-family: TT Lakes;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0px;
-}
-.price-card__value {
-  font-family: TT Lakes;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: 0.2px;
-  margin: 5px 0 10px;
-}
-
-.price__footer {
-  padding: 16px;
-
-  @media (min-width: 768px) {
-    padding: 24px;
+    @media (min-width: 1120px) {
+      margin: 24px 32px 0;
+    }
   }
 
-  @media (min-width: 1120px) {
-    padding: 32px;
+  &__row {
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: minmax(350px, 4fr) 1fr 1fr 119px;
+      align-items: center;
+      column-gap: 24px;
+      padding: 16px 16px 16px 24px;
+      border-bottom: 1px solid #eaeaea;
+      background-color: var(--color-white);
+      font-family: TT Lakes;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: #1b1c21;
+    }
+
+    @media (min-width: 1120px) {
+      grid-template-columns:
+        minmax(420px, 2fr) minmax(100px, 140px) minmax(100px, 140px)
+        119px;
+      padding: 16px 24px;
+    }
+
+    &:last-child {
+      @media (min-width: 768px) {
+        border-bottom: none;
+      }
+    }
+
+    .price__button {
+      @media (min-width: 768px) {
+        justify-self: end;
+        align-self: end;
+      }
+    }
+
+    &--header {
+      @media (min-width: 768px) {
+        padding: 0 16px 8px 24px;
+        border-bottom: none;
+        background-color: transparent;
+        color: #7e7e82;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      @media (min-width: 1120px) {
+        padding: 0 24px 8px;
+      }
+    }
   }
-}
 
-.price__footer-text {
-  font-family: TT Lakes;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--color-text);
-  margin: 0 0 16px;
-  max-width: 421px;
-}
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 119px;
+    height: 32px;
+    padding: 0 12px 0 14px;
+    border: none;
+    border-radius: 16px;
+    background-color: var(--color-pink);
+    cursor: pointer;
+    font-family: TT Lakes;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    transition: transform 0.3s ease;
 
-.price__footer-link {
-  display: inline;
-  font-family: TT Lakes;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--color-text);
-  text-decoration: none;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 
-  &::after {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-left: 8px;
-    background-image: url('../img/main/arrow.svg');
+  &__button-text {
+    display: block;
+  }
+
+  &__button-arrow {
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    background-image: url('../img/main/order.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    vertical-align: middle;
   }
 
-  &:hover {
-    color: var(--color-pink);
+  &__footer {
+    padding: 16px;
+
+    @media (min-width: 768px) {
+      padding: 24px;
+    }
+
+    @media (min-width: 1120px) {
+      padding: 32px;
+    }
+  }
+
+  &__footer-text {
+    margin: 0 0 16px;
+    max-width: 421px;
+    font-family: TT Lakes;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-text);
+  }
+
+  &__footer-link {
+    display: inline;
+    font-family: TT Lakes;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-text);
+    text-decoration: none;
+
+    &::after {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-left: 8px;
+      content: '';
+      background-image: url('../img/main/arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      color: var(--color-pink);
+    }
   }
 }

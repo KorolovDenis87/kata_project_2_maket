@@ -76,11 +76,6 @@ function initMobileSwipers() {
         el: '.brand__pagination',
         clickable: true
       }
-
-      /* navigation: {
-        nextEl: '.brand__button-next',
-        prevEl: '.brand__button-prev'
-      } */
     })
   }
 
@@ -95,11 +90,6 @@ function initMobileSwipers() {
         el: '.technique__pagination',
         clickable: true
       }
-
-      /* navigation: {
-        nextEl: '.technique__button-next',
-        prevEl: '.technique__button-prev'
-      } */
     })
   }
 
@@ -114,11 +104,6 @@ function initMobileSwipers() {
         el: '.price__pagination',
         clickable: true
       }
-
-      /* navigation: {
-        nextEl: '.price__button-next',
-        prevEl: '.price__button-prev'
-      } */
     })
   }
 }
@@ -192,6 +177,14 @@ const modalCloseButtons = document.querySelectorAll('.modal__close')
 function openModal(modal) {
   if (!modal || !modalOverlay) return
 
+  if (aside) {
+    aside.classList.remove('aside-menu--opened')
+  }
+
+  if (overlay) {
+    overlay.classList.remove('overlay--active')
+  }
+
   modal.classList.add('modal--opened')
   modalOverlay.classList.add('modal-overlay--active')
   document.body.style.overflow = 'hidden'
@@ -208,6 +201,10 @@ function closeModals() {
 
   if (modalOverlay) {
     modalOverlay.classList.remove('modal-overlay--active')
+  }
+
+  if (window.innerWidth >= 1120 && aside) {
+    aside.classList.add('aside-menu--opened')
   }
 
   document.body.style.overflow = ''
