@@ -204,7 +204,9 @@ function openModal(modal) {
 
   modal.classList.add('modal--opened')
   modalOverlay.classList.add('modal-overlay--active')
-  document.body.style.overflow = 'hidden'
+
+  document.documentElement.classList.add('page--lock')
+  document.body.classList.add('page--lock')
 }
 
 function closeModals() {
@@ -224,7 +226,8 @@ function closeModals() {
     aside.classList.add('aside-menu--opened')
   }
 
-  document.body.style.overflow = ''
+  document.documentElement.classList.remove('page--lock')
+  document.body.classList.remove('page--lock')
 }
 
 callButtons.forEach((button) => {

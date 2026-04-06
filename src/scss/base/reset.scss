@@ -31,3 +31,8 @@ a:link,
 a:visited {
   text-decoration: none;
 }
+
+html.page--lock,
+body.page--lock {
+  overflow: hidden;
+}
