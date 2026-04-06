@@ -7,11 +7,22 @@ const closeButton = document.getElementById('closeButton')
 const aside = document.getElementById('myAside')
 const overlay = document.getElementById('overlay')
 
+function lockPageScroll() {
+  document.documentElement.classList.add('page--lock')
+  document.body.classList.add('page--lock')
+}
+
+function unlockPageScroll() {
+  document.documentElement.classList.remove('page--lock')
+  document.body.classList.remove('page--lock')
+}
+
 function openAside() {
   if (!aside || !overlay) return
 
   aside.classList.add('aside-menu--opened')
   overlay.classList.add('overlay--active')
+  lockPageScroll()
 }
 
 function closeAside() {
@@ -19,6 +30,7 @@ function closeAside() {
 
   aside.classList.remove('aside-menu--opened')
   overlay.classList.remove('overlay--active')
+  unlockPageScroll()
 }
 
 if (openButton) {
@@ -50,9 +62,11 @@ if (aside && overlay) {
     if (window.innerWidth >= 1120) {
       aside.classList.add('aside-menu--opened')
       overlay.classList.remove('overlay--active')
+      unlockPageScroll()
     } else {
       aside.classList.remove('aside-menu--opened')
       overlay.classList.remove('overlay--active')
+      unlockPageScroll()
     }
   }
 
@@ -204,9 +218,7 @@ function openModal(modal) {
 
   modal.classList.add('modal--opened')
   modalOverlay.classList.add('modal-overlay--active')
-
-  document.documentElement.classList.add('page--lock')
-  document.body.classList.add('page--lock')
+  lockPageScroll()
 }
 
 function closeModals() {
@@ -226,8 +238,7 @@ function closeModals() {
     aside.classList.add('aside-menu--opened')
   }
 
-  document.documentElement.classList.remove('page--lock')
-  document.body.classList.remove('page--lock')
+  unlockPageScroll()
 }
 
 callButtons.forEach((button) => {
